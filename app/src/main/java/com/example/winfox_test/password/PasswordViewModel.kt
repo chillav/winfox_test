@@ -31,7 +31,6 @@ class PasswordViewModel(
     }
 
     fun onSubmitButtonClicked() {
-        // TODO need to set debounce on button clicks
         when(validatePassword()) {
             is ValidationResult.Failure -> onFailurePassword()
             is ValidationResult.Success -> onSuccessPassword()
