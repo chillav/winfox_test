@@ -10,7 +10,6 @@
 + Coil
 
 ## Screenshots
-<img src="https://github.com/chillav/winfox_test/assets/104314167/07e8703f-ac6f-4637-abf8-c0bcb999fd77" width=200/> 
-<img src="https://github.com/chillav/winfox_test/assets/104314167/b0ddbc5a-1f96-4224-9ef7-0a38ec958d08" width=200/> <img src="https://github.com/chillav/winfox_test/assets/104314167/b421d75d-0772-4019-989f-4c82b45cfc55" width=200/> <img src="https://github.com/chillav/winfox_test/assets/104314167/b413344f-89fe-4954-bd38-b6fa13f69206" width=200/> 
-<img src="https://github.com/chillav/winfox_test/assets/104314167/c3d73ffa-6476-4d3a-bb6c-bf0f7e66dde3" width=200/> <img src="https://github.com/chillav/winfox_test/assets/104314167/6cf0f3d0-9306-41ec-ac2a-5c9d466fb556" width=200/> 
-
+<img src="https://github.com/chillav/winfox_test/assets/104314167/61edf8c5-ae56-4b98-9378-8331f3f401e1" width=200/>  <img src="https://github.com/chillav/winfox_test/assets/104314167/48e15e2c-e122-4793-ab68-d385ea2e8b4c" width=200/>  <img src="https://github.com/chillav/winfox_test/assets/104314167/600c7afc-b23b-41e5-8248-69700f0f0abb" width=200/> 
+---
+<img src="https://github.com/chillav/winfox_test/assets/104314167/975c135b-214e-4ca4-a19d-4c1dcb9b2265" width=200/>  <img src="https://github.com/chillav/winfox_test/assets/104314167/cceda407-7074-4bfd-9c21-1a92572e0d52" width=200/> <img src="https://github.com/chillav/winfox_test/assets/104314167/72290095-4907-4261-94fc-43e4a80e6bcb" width=200/> 
