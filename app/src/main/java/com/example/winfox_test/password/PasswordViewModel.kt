@@ -31,8 +31,8 @@ class PasswordViewModel(
     }
 
     fun onSubmitButtonClicked() {
-        when(validatePassword()) {
-            is ValidationResult.Failure -> onFailurePassword()
+        when(val result = validatePassword()) {
+            is ValidationResult.Failure -> onFailurePassword(result.reason)
             is ValidationResult.Success -> onSuccessPassword()
         }
     }
@@ -48,7 +48,7 @@ class PasswordViewModel(
         }
     }
 
-    private fun onFailurePassword() {
+    private fun onFailurePassword(reason: ValidationResult.FailureReason) {
         when {
             _passwordMode.value == PasswordMode.FirstSet -> {
                 toastHelper.showToast(textRes = R.string.incorrect_password)
@@ -57,11 +57,16 @@ class PasswordViewModel(
                 UserPassword.incorrectInputsAmount = UserPassword.incorrectInputsAmount.inc()
                 toastHelper.showToast(textRes = R.string.incorrect_password)
             }
-            else -> {
-                UserPassword.lastBlockTime = System.currentTimeMillis()
-                toastHelper.showToast(textRes = R.string.incorrect_password_block)
-            }
+            else -> blockUser(reason)
         }
+    }
+
+    private fun blockUser(reason: ValidationResult.FailureReason) {
+        // we don't need to restart timer if user have already blocked
+        if (reason == ValidationResult.FailureReason.Wrong) {
+            UserPassword.lastBlockTime = System.currentTimeMillis()
+        }
+        toastHelper.showToast(textRes = R.string.incorrect_password_block)
     }
 
     private fun validatePassword(): ValidationResult {
