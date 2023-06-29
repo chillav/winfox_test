@@ -6,8 +6,10 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.winfox_test.MainActivity
 import com.example.winfox_test.R
 import com.example.winfox_test.databinding.FragmentMoviesBinding
+import com.example.winfox_test.movie_details.MovieDetailsFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,8 +22,8 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
         binding.vm = viewModel
 
-        val adapter = MoviesAdapter {
-
+        val adapter = MoviesAdapter { movie ->
+            (activity as? MainActivity)?.replaceFragment(MovieDetailsFragment.newInstance(movie))
         }
 
         binding.recyclerMovies.adapter = adapter

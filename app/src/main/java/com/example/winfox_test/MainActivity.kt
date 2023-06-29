@@ -17,10 +17,14 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
     }
 
-    fun replaceFragment(fragment: Fragment) {
+    fun replaceFragment(fragment: Fragment, allowBackNavigation: Boolean = true) {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            replace(R.id.fragment_container, fragment).addToBackStack(null)
+            if (allowBackNavigation) {
+                replace(R.id.fragment_container, fragment).addToBackStack(null)
+            } else {
+                replace(R.id.fragment_container, fragment)
+            }
         }
     }
 }

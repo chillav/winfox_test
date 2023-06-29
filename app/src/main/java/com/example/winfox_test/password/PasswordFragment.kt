@@ -24,7 +24,10 @@ class PasswordFragment : Fragment(R.layout.fragment_password) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.event.collect { event ->
                 if (event is PasswordViewModel.Event.SuccessAuth) {
-                    (activity as? MainActivity)?.replaceFragment(MoviesFragment())
+                    (activity as? MainActivity)?.replaceFragment(
+                        fragment = MoviesFragment(),
+                        allowBackNavigation = false
+                    )
                 }
             }
         }
