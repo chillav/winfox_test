@@ -6,4 +6,5 @@
     <string name="submit">Submit</string>
     <string name="incorrect_password">Incorrect password</string>
     <string name="incorrect_password_block">Block on 30 sec</string>
+    <string name="network_error">Something went wrong. Try later</string>
 </resources>

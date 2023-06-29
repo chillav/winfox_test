@@ -8,7 +8,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.winfox_test.MainActivity
 import com.example.winfox_test.R
-import com.example.winfox_test.content.ContentFragment
+import com.example.winfox_test.movies.MoviesFragment
 import com.example.winfox_test.databinding.FragmentPasswordBinding
 import kotlinx.coroutines.launch
 
@@ -24,7 +24,7 @@ class PasswordFragment : Fragment(R.layout.fragment_password) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.event.collect { event ->
                 if (event is PasswordViewModel.Event.SuccessAuth) {
-                    (activity as? MainActivity)?.replaceFragment(ContentFragment())
+                    (activity as? MainActivity)?.replaceFragment(MoviesFragment())
                 }
             }
         }
