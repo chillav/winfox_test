@@ -15,7 +15,10 @@ class MoviesViewModel(
     private val toastHelper: ToastHelper,
 ) : ViewModel() {
     private val _movies = MutableStateFlow<List<Movie>>(emptyList())
+    private val _isLoading = MutableStateFlow(true)
+
     val movies = _movies.asStateFlow()
+    val isLoading = _isLoading.asStateFlow()
 
     init {
         viewModelScope.launch {
@@ -29,6 +32,7 @@ class MoviesViewModel(
                     )
                 }.orEmpty()
             }.onSuccess {
+                _isLoading.value = false
                 _movies.value = it
             }.onFailure { error ->
                 if (error is CancellationException) throw error

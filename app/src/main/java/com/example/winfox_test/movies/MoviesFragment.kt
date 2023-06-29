@@ -2,6 +2,7 @@ package com.example.winfox_test.movies
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -19,8 +20,19 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
         binding.vm = viewModel
 
+        val adapter = MoviesAdapter {
+
+        }
+
+        binding.recyclerMovies.adapter = adapter
+
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.movies.collect {
+            viewModel.movies.collect(adapter::submitList)
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.isLoading.collect { isVisible ->
+                binding.progressBar.isVisible = isVisible
             }
         }
     }
